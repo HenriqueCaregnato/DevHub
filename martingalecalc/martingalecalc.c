@@ -3,6 +3,7 @@
 
 void calcularXRodadas(struct Aposta *aposta) {
     // Implementação para calcular 'x' rodadas
+
     printf("Calculando 'x' rodadas...\n");
     // Lógica de cálculo...
 }
