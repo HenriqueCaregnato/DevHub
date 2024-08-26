@@ -17,9 +17,8 @@ void exibirMenu(){
     printf(" Martingale Calc\n");
     printf("#####################################\n");
     printf("Escolha uma opção\n");
-    printf("1. Calcular 'x' rodadas\n");
-    printf("2. Calcular com saldo limite\n");
-    printf("3. sair\n");
+    printf("1. Calcular 'n' rodadas\n");
+    printf("2. sair\n");
 }
 
 int selecionarMenu(){
@@ -28,7 +27,7 @@ int selecionarMenu(){
     return selecao;
 }
 
-void pegarDadosAposta(){
+void pegarDadosAposta(int opcao){
     //Verificar se a memória já foi alocada
     if (dadosAposta == NULL) {
         dadosAposta = (struct Aposta*) malloc(sizeof(struct Aposta));
@@ -43,32 +42,41 @@ void pegarDadosAposta(){
     printf("Exemplo: 1.5 25.00 5\n");
     printf("-----------------------------------------------------------------------\n");
     scanf("%lf %lf %d", &((*dadosAposta).odd), &((*dadosAposta).stake), &((*dadosAposta).rodadas));
-    //teste
-    printf("Entradas %lf %lf %d\n",(*dadosAposta).odd, (*dadosAposta).stake, (*dadosAposta).rodadas);
 }
 
-int processarSelecao(int selecao){
+void travaParaContinuar(){
+    printf("Presione ENTER para continuar");
+    getchar();//para consumir o '\n' do buffer
+    getchar();
+}
+
+int controlarFluxoSelecao(int selecao){
+    double **matriz;
     switch (selecao)
     {
     case 1:
-        pegarDadosAposta();
-        calcularXRodadas(dadosAposta);
+        pegarDadosAposta(1);
+        matriz = calcularXRodadas(dadosAposta);
+        exibirTabelaMartingale(matriz,dadosAposta);
+        free(matriz);
+        travaParaContinuar();
         break;
     case 2:
-        calcularComSaldoLimite(dadosAposta);
-        break;
-    case 3:
         exit(0);
         break;
     
     default:
+        printf("Nenhuma seleção valida");
         break;
     }
 }
 
 int main(){
-    int selecao;   
-    exibirMenu();
-    selecao = selecionarMenu();
-    processarSelecao(selecao);
+    int selecao;
+    while(1){
+        system("clear");
+        exibirMenu();
+        selecao = selecionarMenu();
+        controlarFluxoSelecao(selecao);
+    }   
 }

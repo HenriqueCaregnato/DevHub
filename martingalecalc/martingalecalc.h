@@ -6,10 +6,11 @@ struct Aposta {
     double metaGanho;  // Armazena a meta de ganho
     int rodadas;       // Armazena o número de rodadas
     double stake;      // Armazena o valor da aposta (stake)
+    double saldoLimite;
 };
 
 // Prototipos das funções
-void calcularXRodadas(struct Aposta *aposta);
-void calcularComSaldoLimite(struct Aposta *aposta);
+double** calcularXRodadas(struct Aposta *aposta);
+void exibirTabelaMartingale(double **matriz,struct Aposta *aposta);
 
 #endif
