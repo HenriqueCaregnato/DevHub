@@ -1,15 +1,16 @@
+/************************************************************
+ * Biblioteca: martingalecalc.c
+ * Autor: Henrique Caregnato
+ * Data: 27/08/2024
+ * Descrição: Esta biblioteca fornece funções para calcular
+ * e exibir os valores de apostas usando a estratégia 
+ * Martingale. Inclui funções para alocar memória para a 
+ * matriz de resultados, calcular valores de apostas em X 
+ * rodadas, e exibir uma tabela formatada com os resultados.
+ ************************************************************/
 #include "martingalecalc.h"
 #include <stdio.h>
 #include <stdlib.h>
-/*
-struct Aposta {
-    double odd;        // Armazena a odd da aposta
-    double metaGanho;  // Armazena a meta de ganho
-    int rodadas;       // Armazena o número de rodadas
-    double stake;      // Armazena o valor da aposta (stake)
-};
-*/
-
 
 void exibirTabelaMartingale(double **matriz,struct Aposta *aposta){
     int linhas = (*aposta).rodadas;
