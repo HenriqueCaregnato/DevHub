@@ -2,11 +2,11 @@
 #define MARTINGALECALC_H
 
 struct Aposta {
-    double odd;        // Armazena a odd da aposta
-    double metaGanho;  // Armazena a meta de ganho
-    int rodadas;       // Armazena o número de rodadas
-    double stake;      // Armazena o valor da aposta (stake)
-    double saldoLimite;
+    double odd;              // Armazena a odd da aposta
+    double metaGanho;        // Armazena a meta de ganho
+    int rodadas;            // Armazena o número de rodadas
+    double stake;          // Armazena o valor da aposta (stake)
+    double saldoLimite;    // Armazena o valor limite da estratégia 
 };
 
 // Protótipos das funções
