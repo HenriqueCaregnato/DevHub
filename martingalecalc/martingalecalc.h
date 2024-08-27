@@ -9,7 +9,7 @@ struct Aposta {
     double saldoLimite;
 };
 
-// Prototipos das funções
+// Protótipos das funções
 double** calcularXRodadas(struct Aposta *aposta);
 void exibirTabelaMartingale(double **matriz,struct Aposta *aposta);
 
