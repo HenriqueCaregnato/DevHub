@@ -1,15 +1,17 @@
-/*
-    Martingale Simulator
-
-    Este programa faz calculos para definir valores a apostar em uma 
-    estrategia martingale
-*/
+/*****************************************************
+ * Programa: Martingale Simulator
+ * Autor: Henrique Caregnato
+ * Data: 27/08/2024
+ * Descrição: Este programa calcula o saldo máximo
+ * necessário para uma sequência consecutiva de perdas
+ * utilizando a estratégia Martingale.
+ *****************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include "martingalecalc.h"
 
 //Variaveis globais
-struct Aposta *dadosAposta; //para econimizar recursos futuramente
+struct Aposta *dadosAposta; //para ecomizar recursos futuramente
 
 void exibirMenu(){
     double odd, metaGanho, rodadas, stake;
