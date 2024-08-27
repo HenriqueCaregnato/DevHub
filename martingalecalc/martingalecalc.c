@@ -30,7 +30,7 @@ void exibirTabelaMartingale(double **matriz,struct Aposta *aposta){
     }
 }
 
-//alocar uma matriz
+//Aloca uma matriz bidimencional
 double ** alocarMatriz(struct Aposta *apostas){
     //alocar memória para linhas
     double **matriz = (double**) malloc((*apostas).rodadas * sizeof(double*));
@@ -42,7 +42,7 @@ double ** alocarMatriz(struct Aposta *apostas){
 }
 
 
-//retorna uma matriz
+//Faz os calculos de valores para a estratégia martingale e retorna uma matriz
 double** calcularXRodadas(struct Aposta *aposta) {
     (*aposta).metaGanho = ((*aposta).odd * (*aposta).stake) - ((*aposta).stake);
 
